@@ -4,7 +4,20 @@
     {
         static void Main()
         {
+            Console.Write("input string : ");
+            string  input = Console.ReadLine();
 
+            Console.Write("input prefix : ");
+            string prefix = Console.ReadLine();
+
+            string[] words = input.Split([' ', '\t', '\r'], StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                if (word.StartsWith(prefix))
+                {
+                    Console.Write($"{word}");
+                }
+            }
         }
     }
 }
